@@ -1,20 +1,16 @@
-# 项目模型（Project Model）
+# Project Model
 
-## 核心概念
+## Identity
 
-### 项目标识
+- source_repo = project identity
 
-- 以 source_repo 为唯一标识
-- 同 repo = 同项目
-
-### 生命周期
+## Lifecycle
 
 - registered
 - initialized
 - activated
 
-### 上下文分层
+## Context Split
 
-- profile（长期）
-- snapshot（当前）
-
+- profile = stable
+- snapshot = current
