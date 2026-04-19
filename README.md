@@ -2,7 +2,7 @@
 
 `context-bridge` 是一个基于 Git 的多 Agent 协作上下文仓。
 
-它的作用不是做“万能记忆系统”，而是把协作里最容易丢失的内容固定下来：
+它的目标不是替代聊天工具，而是把协作中最容易丢失的事实长期固定下来：
 
 - 项目背景
 - 当前状态
@@ -29,22 +29,27 @@
 
 1. Git 是事实源
 2. 项目标识以 `source_repo` 为准
-3. 状态写 `current_snapshot.md`
-4. 稳定事实写 `project_profile.md`
+3. 稳定事实写 `project_profile.md`
+4. 当前状态写 `current_snapshot.md`
 5. 任务流必须走 `handoff -> 执行 -> feedback`
 6. 所有协作必须显式、可追踪、可复盘
 7. `skill` 是必要抽象层，不是附属说明
 
-## 运行模型
+## 工作方式
 
-- 项目任务：默认由所属项目相关 agent 处理
-- 全局任务：规则、README、onboarding、registry 维护等，可由合适 agent 处理
-- 跨项目任务：允许，但必须把 handoff / feedback 落库到 Git
+`context-bridge` 把协作拆成三层：
+
+- `docs/`：说明规则、结构和约定
+- `skills/`：把规则变成可执行入口
+- `context/`：承载项目、agent 和系统级事实
+
+实际任务仍然通过 `handoff -> 执行 -> feedback` 流转。
 
 ## 快速入口
 
 - [`docs/index.md`](docs/index.md)
 - [`docs/architecture.md`](docs/architecture.md)
+- [`docs/skills.md`](docs/skills.md)
 - [`docs/quickstart.md`](docs/quickstart.md)
 - [`docs/onboarding.md`](docs/onboarding.md)
 - [`docs/project-model.md`](docs/project-model.md)
@@ -54,14 +59,6 @@
 - [`examples/README.md`](examples/README.md)
 - [`CONTRIBUTING.md`](CONTRIBUTING.md)
 - [`LICENSE`](LICENSE)
-
-## Skill 层
-
-`skill` 是 `context-bridge` 的必要抽象层。
-
-- `docs/` 负责说明规则和结构
-- `skills/` 负责把规则变成可执行入口
-- 真实任务仍然通过 `handoff -> 执行 -> feedback` 流转
 
 ## 配图
 
@@ -92,6 +89,7 @@ context/
 docs/
   index.md
   architecture.md
+  skills.md
   quickstart.md
   onboarding.md
   project-model.md

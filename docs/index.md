@@ -8,7 +8,8 @@
 2. [`onboarding.md`](./onboarding.md)
 3. [`project-model.md`](./project-model.md)
 4. [`agent-routing.md`](./agent-routing.md)
-5. [`architecture.md`](./architecture.md)
+5. [`skills.md`](./skills.md)
+6. [`architecture.md`](./architecture.md)
 
 ## 文档说明
 
@@ -18,6 +19,7 @@
 | [`onboarding.md`](./onboarding.md) | 说明如何把已有项目接入 context-bridge。 |
 | [`project-model.md`](./project-model.md) | 说明项目身份、生命周期和上下文分层。 |
 | [`agent-routing.md`](./agent-routing.md) | 说明项目任务、全局任务和跨项目任务如何路由。 |
+| [`skills.md`](./skills.md) | 解释为什么 skill 是必要抽象层，以及它如何承接文档。 |
 | [`architecture.md`](./architecture.md) | 说明仓库级目录、工作流和分层原则。 |
 
 ## 规则

@@ -43,6 +43,10 @@ Agent 注册与绑定目录，用来说明谁能处理什么任务。
 
 最小 handoff / feedback 样例，方便直接照着写。
 
+### 8. `docs/skills.md`
+
+解释 `skill` 为什么是必要抽象层，以及它如何连接文档和执行。
+
 ## 工作流
 
 ```text
@@ -63,4 +67,5 @@ read docs -> identify project -> read profile -> read snapshot -> read handoff -
 - 新人先看 `README.md`
 - 再看 `docs/index.md`
 - 再看 `docs/architecture.md`
-- 再看 `skills/context-bridge/SKILL.md`
+- 再看 `docs/skills.md`
+- 最后进入 `skills/context-bridge/SKILL.md`
