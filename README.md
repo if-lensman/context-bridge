@@ -1,4 +1,6 @@
-﻿# context-bridge
+# context-bridge
+
+![context-bridge banner](assets/hero-banner.png)
 
 `context-bridge` 是一个基于 Git 的多 Agent 协作上下文仓。
 
@@ -62,6 +64,10 @@
 
 ## 配图
 
+### 多 Agent 汇流
+
+![Multi-agent hub](assets/multi-agent-hub.png)
+
 ### 任务流
 
 ![Task flow diagram](assets/bridge-flow.svg)
@@ -107,6 +113,8 @@ examples/
   task-feedback.example.json
 
 assets/
+  hero-banner.png
+  multi-agent-hub.png
   bridge-flow.svg
   layers.svg
   skill-lens.svg
