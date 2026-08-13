@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "title": "Agent Task Board",
+  "status_field": "status",
+  "columns": [
+    { "id": "captured", "name": "收集箱", "wip_limit": null },
+    { "id": "backlog", "name": "积压事项", "wip_limit": null },
+    { "id": "ready", "name": "待办事项", "wip_limit": 10 },
+    { "id": "queued", "name": "执行队列", "wip_limit": 4 },
+    { "id": "in_progress", "name": "进行中", "wip_limit": 4 },
+    { "id": "in_review", "name": "审核中", "wip_limit": 8 },
+    { "id": "blocked", "name": "已阻塞", "wip_limit": null },
+    { "id": "done", "name": "已完成", "wip_limit": null },
+    { "id": "cancelled", "name": "已取消", "wip_limit": null }
+  ],
+  "default_filters": {
+    "hide_cancelled": true,
+    "done_retention_days": 30
+  }
+}

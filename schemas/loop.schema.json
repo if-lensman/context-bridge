@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Task Loop",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["loop_id", "name", "status", "project_id", "workstream_id", "trigger", "collect", "filter", "action", "guardrails", "fallback", "updated_at"],
+  "properties": {
+    "loop_id": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "status": { "type": "string", "enum": ["draft", "active", "paused", "archived"] },
+    "project_id": { "type": "string", "minLength": 1 },
+    "workstream_id": { "type": "string", "minLength": 1 },
+    "trigger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type"],
+      "properties": {
+        "type": { "type": "string", "enum": ["cron", "webhook", "manual", "event"] },
+        "expression": { "type": ["string", "null"] },
+        "timezone": { "type": ["string", "null"] },
+        "event": { "type": ["string", "null"] }
+      }
+    },
+    "collect": { "type": "object" },
+    "filter": { "type": "object" },
+    "action": { "type": "object" },
+    "guardrails": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["risk_ceiling", "max_tasks_per_run", "deduplicate", "requires_review"],
+      "properties": {
+        "risk_ceiling": { "type": "string", "enum": ["low", "medium", "high"] },
+        "max_tasks_per_run": { "type": "integer", "minimum": 1 },
+        "deduplicate": { "type": "boolean" },
+        "requires_review": { "type": "boolean" }
+      }
+    },
+    "fallback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["on_empty", "on_failure", "on_no_human_review"],
+      "properties": {
+        "on_empty": { "type": "string", "enum": ["no_op", "create_maintenance_task", "notify"] },
+        "on_failure": { "type": "string", "enum": ["block", "notify", "retry_next_schedule"] },
+        "on_no_human_review": { "type": "string", "enum": ["stay_in_backlog", "stay_in_review", "auto_continue_low_risk", "block"] }
+      }
+    },
+    "updated_at": { "type": "string", "minLength": 1 }
+  }
+}

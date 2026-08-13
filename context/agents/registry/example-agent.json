@@ -1,0 +1,19 @@
+{
+  "agent_id": "local-code-agent-001",
+  "name": "Local Code Agent",
+  "type": "local",
+  "capabilities": [
+    "read_repo",
+    "write_files",
+    "execute_tasks"
+  ],
+  "input": [
+    "task_handoff"
+  ],
+  "output": [
+    "task_feedback",
+    "snapshot_update"
+  ],
+  "description": "负责执行代码任务并回传结果",
+  "registered_at": "2026-04-15"
+}

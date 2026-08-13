@@ -1,6 +1,8 @@
-﻿{
+{
   "task_id": "2026-04-19-example-001",
   "project_id": "demo-project",
+  "workstream_id": "demo-project:daily-development",
+  "run_id": "2026-04-19-example-001-run-001",
   "source_repo": "ssh://git@example.com/demo-project.git",
   "from": "chatgpt-web",
   "to": "then-codex-cli",
@@ -16,6 +18,11 @@
     "项目摘要",
     "任务执行回执"
   ],
+  "acceptance_criteria": [
+    "项目摘要和回执均可通过对应 schema 校验"
+  ],
+  "risk_level": "low",
+  "requires_review": true,
   "questions": [],
   "created_at": "2026-04-19"
 }

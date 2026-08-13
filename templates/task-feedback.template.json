@@ -1,0 +1,18 @@
+{
+  "task_id": "yyyy-mm-dd-<topic>-001",
+  "project_id": "<project-id>",
+  "workstream_id": "<project-id>:daily-development",
+  "run_id": "yyyy-mm-dd-<topic>-001-run-001",
+  "task_status": "in_review",
+  "status": "done",
+  "done": [
+    "<completed item>"
+  ],
+  "changed_files": [
+    "<relative path>"
+  ],
+  "open_questions": [],
+  "summary": "<short summary>",
+  "docs": [],
+  "updated_at": "2026-04-19"
+}

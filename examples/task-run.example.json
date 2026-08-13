@@ -1,0 +1,15 @@
+{
+  "run_id": "DEMO-001-run-001",
+  "task_id": "DEMO-001",
+  "project_id": "demo-project",
+  "agent": { "id": "codex-default", "runtime": "codex", "session_ref": null },
+  "status": "running",
+  "attempt": 1,
+  "trigger": "assignment",
+  "started_at": "2026-08-04T10:05:00+08:00",
+  "heartbeat_at": "2026-08-04T10:10:00+08:00",
+  "finished_at": null,
+  "result_summary": null,
+  "failure_reason": null,
+  "artifacts": []
+}

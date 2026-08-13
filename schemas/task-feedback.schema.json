@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Task Feedback",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task_id",
+    "project_id",
+    "status",
+    "done",
+    "changed_files",
+    "open_questions",
+    "summary",
+    "updated_at"
+  ],
+  "properties": {
+    "task_id": { "type": "string", "minLength": 1 },
+    "project_id": { "type": "string", "minLength": 1 },
+    "workstream_id": { "type": "string", "minLength": 1 },
+    "run_id": { "type": "string", "minLength": 1 },
+    "task_status": {
+      "type": "string",
+      "enum": ["in_review", "done", "blocked", "ready", "cancelled"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["done", "needs_confirmation", "blocked"]
+    },
+    "done": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "changed_files": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "summary": { "type": "string", "minLength": 1 },
+    "docs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "updated_at": { "type": "string", "minLength": 1 },
+    "blocked_reason": { "type": "string", "minLength": 1 }
+  }
+}

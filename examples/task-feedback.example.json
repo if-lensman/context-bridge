@@ -1,13 +1,16 @@
-﻿{
+{
   "task_id": "2026-04-19-example-001",
   "project_id": "demo-project",
+  "workstream_id": "demo-project:daily-development",
+  "run_id": "2026-04-19-example-001-run-001",
+  "task_status": "in_review",
   "status": "done",
   "done": [
     "整理了 demo-project 的项目上下文样例"
   ],
   "changed_files": [
-    "context/projects/demo-project/project_profile.md",
-    "context/projects/demo-project/current_snapshot.md"
+    "projects/demo-project/project_profile.md",
+    "projects/demo-project/current_snapshot.md"
   ],
   "open_questions": [],
   "summary": "完成 demo-project 的最小任务流示例。",

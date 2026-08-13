@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Task Run",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["run_id", "task_id", "project_id", "agent", "status", "attempt", "trigger", "started_at", "artifacts"],
+  "properties": {
+    "run_id": { "type": "string", "minLength": 1 },
+    "task_id": { "type": "string", "minLength": 1 },
+    "project_id": { "type": "string", "minLength": 1 },
+    "agent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "runtime"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "runtime": { "type": "string", "minLength": 1 },
+        "session_ref": { "type": ["string", "null"] }
+      }
+    },
+    "status": { "type": "string", "enum": ["created", "dispatched", "running", "succeeded", "failed", "timed_out", "cancelled"] },
+    "attempt": { "type": "integer", "minimum": 1 },
+    "trigger": { "type": "string", "enum": ["assignment", "comment", "manual", "loop", "retry"] },
+    "started_at": { "type": "string", "minLength": 1 },
+    "heartbeat_at": { "type": ["string", "null"] },
+    "finished_at": { "type": ["string", "null"] },
+    "result_summary": { "type": ["string", "null"] },
+    "failure_reason": { "type": ["string", "null"] },
+    "artifacts": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  }
+}

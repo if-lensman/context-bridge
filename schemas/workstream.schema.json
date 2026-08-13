@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Project Workstreams",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["project_id", "primary_workstream_id", "workstreams", "updated_at"],
+  "properties": {
+    "project_id": { "type": "string", "minLength": 1 },
+    "primary_workstream_id": { "type": "string", "minLength": 1 },
+    "workstreams": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["workstream_id", "name", "type", "status", "purpose"],
+        "properties": {
+          "workstream_id": { "type": "string", "minLength": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "type": {
+            "type": "string",
+            "enum": ["development", "maintenance", "research", "documentation", "operations", "custom"]
+          },
+          "status": { "type": "string", "enum": ["active", "paused", "completed", "archived"] },
+          "purpose": { "type": "string", "minLength": 1 },
+          "task_defaults": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "type": { "type": "string" },
+              "priority": { "type": "string", "enum": ["urgent", "high", "medium", "low", "none"] },
+              "risk_level": { "type": "string", "enum": ["low", "medium", "high", "critical"] },
+              "requires_review": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    },
+    "updated_at": { "type": "string", "minLength": 1 }
+  }
+}

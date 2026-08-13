@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "task_id": "PROJECT-001",
+  "project_id": "<project-id>",
+  "workstream_id": "<project-id>:daily-development",
+  "parent_task_id": null,
+  "title": "<bounded task title>",
+  "type": "feature",
+  "status": "captured",
+  "priority": "medium",
+  "risk_level": "medium",
+  "objective": "<one verifiable objective>",
+  "background": [],
+  "scope": { "include": [], "exclude": [] },
+  "acceptance_criteria": ["<verifiable acceptance criterion>"],
+  "source": { "type": "manual", "ref": null, "deduplication_key": null },
+  "assignee": { "type": "unassigned", "id": null },
+  "dependencies": [],
+  "blocked_reason": null,
+  "cancellation_reason": null,
+  "requires_review": true,
+  "automation_policy": {
+    "auto_dispatch": false,
+    "max_runs": 3,
+    "timeout_minutes": 120,
+    "on_failure": "return_to_ready",
+    "on_no_review": "stay_in_review",
+    "cost_budget": null
+  },
+  "artifacts": {
+    "handoff": null,
+    "feedback": null,
+    "branch": null,
+    "commits": [],
+    "pull_request": null,
+    "documents": []
+  },
+  "runs": [],
+  "created_at": "yyyy-mm-ddThh:mm:ss+08:00",
+  "updated_at": "yyyy-mm-ddThh:mm:ss+08:00",
+  "completed_at": null
+}

@@ -1,0 +1,26 @@
+{
+  "agent_id": "claude-code",
+  "name": "Claude Code Agent",
+  "type": "local",
+  "capabilities": [
+    "read_repo",
+    "write_files",
+    "run_shell_commands",
+    "build_and_verify",
+    "structured_handoff_feedback",
+    "progress_file_output",
+    "task_docs_output"
+  ],
+  "input": [
+    "task_handoff",
+    "project_snapshot"
+  ],
+  "output": [
+    "task_feedback",
+    "snapshot_update",
+    "implementation_notes",
+    "progress_update"
+  ],
+  "description": "Claude Code CLI agent，负责本地代码执行、CLI 工具调用、进度文件输出及结构化回执。",
+  "registered_at": "2026-04-18"
+}

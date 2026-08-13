@@ -1,0 +1,24 @@
+{
+  "project": {
+    "project_id": "demo-project",
+    "name": "Demo Project",
+    "source_repo": "ssh://git@example.com/demo-project.git",
+    "description": "项目长期用途的一句话说明。",
+    "summary": "项目索引中的简短说明。",
+    "status": "已初始化",
+    "agents": [
+      "then-codex-cli"
+    ],
+    "active_platform": "macos",
+    "local_paths": {
+      "macos": "/Users/<you>/workspace/demo-project",
+      "windows": "D:/workspace/demo-project",
+      "linux": "/data/workspace/demo-project"
+    }
+  },
+  "handover": {
+    "agent_id": "demo-agent",
+    "title": "Demo Agent 交接文档",
+    "output": "docs/handover/demo-agent-handover.md"
+  }
+}

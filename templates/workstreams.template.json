@@ -1,0 +1,20 @@
+{
+  "project_id": "<project-id>",
+  "primary_workstream_id": "<project-id>:daily-development",
+  "workstreams": [
+    {
+      "workstream_id": "<project-id>:daily-development",
+      "name": "日常迭代",
+      "type": "development",
+      "status": "active",
+      "purpose": "承载项目持续发生的功能开发、缺陷修复和工程治理任务；Workstream 本身不直接交给 Agent 执行。",
+      "task_defaults": {
+        "type": "feature",
+        "priority": "medium",
+        "risk_level": "medium",
+        "requires_review": true
+      }
+    }
+  ],
+  "updated_at": "yyyy-mm-dd"
+}

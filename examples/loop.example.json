@@ -1,0 +1,14 @@
+{
+  "loop_id": "demo-project:weekly-triage",
+  "name": "每周 GitHub Issue 整理",
+  "status": "draft",
+  "project_id": "demo-project",
+  "workstream_id": "demo-project:daily-development",
+  "trigger": { "type": "cron", "expression": "0 21 * * 0", "timezone": "Asia/Shanghai", "event": null },
+  "collect": { "source": "github_issues", "repository": "example/demo-project" },
+  "filter": { "state": "open", "labels": ["bug"] },
+  "action": { "create_task_status": "backlog", "task_type": "bug" },
+  "guardrails": { "risk_ceiling": "medium", "max_tasks_per_run": 10, "deduplicate": true, "requires_review": true },
+  "fallback": { "on_empty": "no_op", "on_failure": "notify", "on_no_human_review": "stay_in_backlog" },
+  "updated_at": "2026-08-04"
+}
