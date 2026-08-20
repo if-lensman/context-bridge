@@ -32,6 +32,11 @@ RENDER_EXT = {".md"}                       # 渲染为站内页面
 RAW_EXT = {".html", ".json", ".txt", ".png", ".jpg", ".jpeg", ".svg", ".gif", ".webp", ".pdf"}
 IGNORE_DIRS = {".git", "node_modules", "dist", "__pycache__"}
 
+# ---------------------------------------------------------------- 展示配置
+# 标题区展示的 GitHub 仓库与静态站地址（star 徽章由 shields.io 实时渲染）
+GITHUB_REPO = "if-lensman/context-bridge"
+SITE_URL = "https://if-lensman.github.io/context-bridge/"
+
 # ---------------------------------------------------------------- 分区配置
 # 按职能特点组织：项目记忆 / Agent 与技能 / 仓库指南与协议资源
 SECTIONS = [
@@ -159,6 +164,10 @@ a{color:var(--brand);text-decoration:none}
 a:hover{text-decoration:underline}
 nav.top{position:sticky;top:0;z-index:9;background:#fff;border-bottom:1px solid var(--line);padding:0 24px;display:flex;align-items:center;gap:4px;flex-wrap:wrap}
 nav.top .brand{font-weight:700;margin-right:20px;padding:14px 0;color:var(--ink)}
+nav.top .meta{display:flex;align-items:center;gap:8px;margin-right:auto}
+nav.top .badge-link{font-size:12.5px;color:var(--sub);border:1px solid var(--line);border-radius:99px;padding:3px 10px}
+nav.top .badge-link:hover{color:var(--brand);border-color:var(--brand);text-decoration:none}
+nav.top .stars{height:20px;vertical-align:middle}
 nav.top a.tab{padding:14px 12px;color:var(--sub);border-bottom:2px solid transparent}
 nav.top a.tab:hover{color:var(--ink);text-decoration:none}
 nav.top a.tab.on{color:var(--brand);border-bottom-color:var(--brand);font-weight:600}
@@ -211,12 +220,18 @@ def page(title: str, body: str, active: str = "", prefix: str = "") -> str:
         f'<a class="tab{" on" if s["id"] == active else ""}" href="{prefix}sections/{s["id"]}.html">{s["icon"]} {s["title"]}</a>'
         for s in SECTIONS
     )
+    meta = (
+        f'<a class="badge-link" href="https://github.com/{GITHUB_REPO}" target="_blank">'
+        f"github.com/{GITHUB_REPO}</a>"
+        f'<img class="stars" src="https://img.shields.io/github/stars/{GITHUB_REPO}?style=flat&label=stars" '
+        f'alt="GitHub stars" title="GitHub stars">'
+    )
     return f"""<!DOCTYPE html>
 <html lang="zh-CN"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)} · Context Bridge</title>
 <style>{CSS}</style></head><body>
-<nav class="top"><a class="brand" href="{prefix}index.html">Context Bridge</a>{tabs}</nav>
+<nav class="top"><a class="brand" href="{prefix}index.html">Context Bridge</a><span class="meta">{meta}</span>{tabs}</nav>
 <div class="wrap">{body}</div>
 </body></html>"""
 
@@ -409,7 +424,8 @@ def build_home(counts, infos):
         file_row(i["title"], url(content_href(i["repo_path"])), "md", i["mtime"], note=i["repo_path"])
         for i in recent)
     body = (f'<h1 class="page">Context Bridge</h1>'
-            f'<p class="lead">context-bridge 的人类可读视图 · 生成于 {datetime.now():%Y-%m-%d %H:%M}</p>'
+            f'<p class="lead"><a href="{SITE_URL}">{SITE_URL}</a> · '
+            f'context-bridge 的人类可读视图 · 生成于 {datetime.now():%Y-%m-%d %H:%M}</p>'
             f'<div class="grid">{"".join(cards)}</div>'
             f'<h2 class="group">最近更新</h2><ul class="files">{rows}</ul>')
     (DIST / "index.html").write_text(page("首页", body, prefix=""), encoding="utf-8")
