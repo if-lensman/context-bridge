@@ -39,7 +39,7 @@ python3 site/build.py --serve           # 生成并本地预览 http://localhost
 
 `site/dist/` 是纯静态目录，整体上传到任意静态托管即可：
 
-- **GitHub Pages**：把 `dist/` 内容推到 `gh-pages` 分支，或仓库 Settings → Pages 选择对应目录
+- **GitHub Pages**：本项目已配置自动构建，push 到 `main` 后自动发布到 <https://if-lensman.github.io/context-bridge/>（workflow：`.github/workflows/pages.yml`）
 - **EdgeOne Pages / Vercel / Netlify**：新建静态站点项目，构建命令留空，发布目录指向 `site/dist`
 - **内网/本机**：`cd site/dist && python3 -m http.server 8642`
 

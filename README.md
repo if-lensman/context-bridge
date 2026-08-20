@@ -79,6 +79,14 @@ handoff -> 执行 -> feedback -> current_snapshot
 - **新项目接入 + 首条任务闭环**：从 `project init` 到 `feedback` 完整走一遍
 - **跨 Agent 任务交接**：规划 agent 拆任务、执行 agent 落地，换人不中断任务链
 
+## 展示站
+
+仓库文档会通过 GitHub Actions 自动构建为纯静态站点：
+
+**https://if-lensman.github.io/context-bridge/**
+
+构建与发布说明见 [`site/README.md`](site/README.md)。
+
 ## 初始化功能
 
 仓库内置无第三方依赖的初始化工具。
