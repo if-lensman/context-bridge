@@ -12,3 +12,6 @@ Thumbs.db
 # Python 运行缓存
 __pycache__/
 *.pyc
+
+# 静态展示站构建产物
+site/dist/

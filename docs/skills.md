@@ -20,9 +20,12 @@
 
 ## 当前约定
 
-- canonical skill：[`skills/context-bridge/SKILL.md`](../skills/context-bridge/SKILL.md)
+- 注册项目协作 canonical skill：[`skills/context-bridge/SKILL.md`](../skills/context-bridge/SKILL.md)
+- 全局知识沉淀 skill：[`skills/context-knowledge/SKILL.md`](../skills/context-knowledge/SKILL.md)
 
-这个 skill 负责注册项目协作子系统：项目注册与初始化、Workstream / Task 生命周期、Agent Run、handoff / feedback、profile / snapshot、受控 Loop 和开发任务执行。
+`context-bridge` skill 负责注册项目协作子系统：项目注册与初始化、Workstream / Task 生命周期、Agent Run、handoff / feedback、profile / snapshot、受控 Loop 和开发任务执行。
+
+`context-knowledge` skill 只负责知识写入和迁移的落点与格式（Frontmatter、路由、索引同步）；注册项目的 feedback/snapshot 回写仍走 `context-bridge` skill。
 
 底层初始化命令位于 [`scripts/README.md`](../scripts/README.md)。skill 负责判断何时初始化和如何进入后续任务流，脚本负责幂等创建目录、registry 和索引。
 

@@ -66,6 +66,7 @@ handoff -> 执行 -> feedback -> current_snapshot
 - `skills/`：把规则变成可执行入口
 - `schemas/`、`templates/`、`examples/`：协议资源
 - `scripts/`：初始化与任务生命周期命令
+- `site/`：静态展示站生成器（把给人看的文档渲染成纯静态站点）
 
 实际任务仍然通过 `handoff -> 执行 -> feedback` 流转。
 
@@ -119,6 +120,8 @@ handoff -> 执行 -> feedback -> current_snapshot
 - [`scripts/README.md`](scripts/README.md)
 - [`skills/README.md`](skills/README.md)
 - [`skills/context-bridge/SKILL.md`](skills/context-bridge/SKILL.md)
+- [`skills/context-knowledge/SKILL.md`](skills/context-knowledge/SKILL.md)
+- [`site/README.md`](site/README.md)
 - [`examples/README.md`](examples/README.md)
 - [`CONTRIBUTING.md`](CONTRIBUTING.md)
 - [`LICENSE`](LICENSE)
@@ -197,6 +200,13 @@ skills/
   README.md
   context-bridge/
     SKILL.md
+  context-knowledge/
+    SKILL.md
+
+site/
+  README.md
+  build.py
+  requirements.txt
 
 scripts/
   README.md

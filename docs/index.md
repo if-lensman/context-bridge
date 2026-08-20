@@ -34,6 +34,7 @@
 - [`../tasks/README.md`](../tasks/README.md)：Task、Run、看板状态和 Loop 的字段与生命周期参考
 - [`../scripts/README.md`](../scripts/README.md)：初始化与任务生命周期命令参考
 - [`../projects/registry/README.md`](../projects/registry/README.md)：项目注册表字段说明
+- [`../site/README.md`](../site/README.md)：仓库静态展示站：把给人看的文档按职能分区生成纯静态站点，构建与发布说明。
 
 ## 规则
 
